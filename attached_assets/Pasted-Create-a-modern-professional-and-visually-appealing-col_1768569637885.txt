@@ -1,0 +1,93 @@
+Create a modern, professional, and visually appealing college website for "Darshan University" that demonstrates their Digital Answer Paper Evaluation System.
+
+Purpose:
+The website should clearly show that Darshan University evaluates exam papers digitally through a multi-level verification process after scanning handwritten answer sheets.
+
+Branding:
+- College Name: Darshan University
+- Use official-style academic colors (blue, white, light gray)
+- Clean, trustworthy, and technology-driven look
+- Use smooth animations and professional icons
+- Responsive for mobile, tablet, and desktop
+
+Website Structure:
+
+1. Hero Section:
+- Large heading: "Digital Answer Paper Evaluation System"
+- Subheading: "Ensuring Accuracy, Transparency & Quality in Examination Assessment"
+- CTA Buttons:
+  - "How It Works"
+  - "Explore the Process"
+- Background: Abstract tech/education-themed design
+
+2. About Digital Evaluation:
+- Explain that handwritten answer papers are scanned securely
+- Evaluations are done digitally to improve efficiency and accuracy
+- Mention alignment with modern academic standards
+- Keep the language formal and institutional
+
+3. Digital Evaluation Workflow (Core Section):
+Show the process visually using cards, steps, or timeline:
+
+Step 1: Answer Paper Scanning
+- Secure scanning of handwritten answer sheets
+- Encrypted digital storage
+
+Step 2: Level 1 Evaluation – Junior Supervisor
+- Initial evaluation and marking
+- Focus on correctness and completeness
+
+Step 3: Level 2 Evaluation – Senior Supervisor
+- Review of marks and evaluation quality
+- Ensures academic consistency
+
+Step 4: Level 3 Evaluation – University Authority
+- Final verification by senior academic staff
+- Approval and result finalization
+
+4. Key Benefits Section:
+- High Accuracy & Transparency
+- Reduced Human Error
+- Faster Result Processing
+- Secure Digital Records
+- Multi-Level Quality Checks
+
+5. Technology & Security:
+- Secure digital access
+- Role-based evaluation system
+- Audit trails for transparency
+- Data protection and confidentiality
+
+6. FAQs Section:
+Include accordion-style FAQs such as:
+- What is digital evaluation?
+- How are handwritten papers checked digitally?
+- Is the evaluation secure?
+- How many levels of checking are involved?
+- Does digital evaluation reduce errors?
+- Who has access to the answer papers?
+
+7. University Trust Section:
+- Highlight Darshan University’s commitment to innovation
+- Emphasize academic integrity and excellence
+- Optional stats or highlights (years of excellence, students, programs)
+
+8. Footer:
+- Darshan University name
+- Links: Home | Process | FAQs | Contact
+- Copyright © Darshan University
+- Clean academic footer design
+
+Technical Requirements:
+- Use HTML, CSS, and JavaScript only
+- No backend required
+- Smooth scrolling
+- Subtle animations on scroll
+- Modern UI components
+- Well-structured, commented code
+- Keep all content professional and suitable for a university presentation
+
+Make the website look impressive enough for:
+- College project submission
+- Internal university demo
+- Presentation to faculty members

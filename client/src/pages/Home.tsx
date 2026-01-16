@@ -18,95 +18,102 @@ import {
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent } from "@/components/ui/card";
+import { useCounter } from "@/hooks/use-counter";
 
 export default function Home() {
   const scrollTo = (id: string) => {
     document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  // Counter animations for stats
+  const errorReduction = useCounter(95, 2000);
+  const timeSaved = useCounter(50, 2000);
+  const dataIntegrity = useCounter(100, 2000);
+
   return (
-    <div className="min-h-screen bg-white font-body text-slate-900 selection:bg-primary/10">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/40 font-body text-slate-900">
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 -z-10 bg-slate-50 dark:bg-slate-950">
-          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-[120px] animate-pulse delay-700"></div>
+      <section id="home" className="relative pt-32 pb-24 lg:pt-48 lg:pb-44 overflow-hidden">
+        {/* Refined Animated Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-gradient-to-r from-indigo-400/20 to-blue-500/20 rounded-full blur-3xl floating"></div>
+          <div className="absolute top-32 right-20 w-[600px] h-[600px] bg-gradient-to-r from-blue-400/15 to-cyan-500/15 rounded-full blur-3xl floating" style={{animationDelay: '2s'}}></div>
+          <div className="absolute bottom-20 left-1/4 w-[450px] h-[450px] bg-gradient-to-r from-indigo-400/10 to-purple-500/10 rounded-full blur-3xl floating" style={{animationDelay: '4s'}}></div>
         </div>
         
         <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs sm:text-sm font-black uppercase tracking-widest mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/80 backdrop-blur-md border border-indigo-200/60 text-indigo-700 text-sm font-semibold mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 shadow-sm hover:shadow-md transition-shadow">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-60"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
             </span>
             Institutional Excellence
           </div>
           
-          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black text-slate-950 dark:text-white mb-8 tracking-[ -0.05em] leading-[0.85] animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            Assessment <br className="hidden sm:block"/>
-            <span className="text-gradient">Engineered.</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-display font-extrabold text-slate-900 mb-6 leading-[1.1] animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            Digital Assessment <br className="hidden sm:block"/>
+            <span className="text-gradient">Reimagined</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl md:text-3xl text-slate-600 dark:text-slate-400 max-w-4xl mx-auto mb-16 leading-relaxed font-semibold animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
-            The future of academic evaluation. Secure, multi-layered, and built for Darshan University's vision of excellence.
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-12 leading-relaxed animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
+            Experience the future of academic evaluation with a <span className="text-indigo-600 font-semibold">secure</span>, <span className="text-blue-600 font-semibold">transparent</span>, and <span className="text-cyan-600 font-semibold">efficient</span> digital platform.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto h-20 sm:h-24 px-12 sm:px-16 rounded-[2.5rem] text-xl sm:text-2xl font-black uppercase tracking-widest bg-primary hover:bg-primary/90 shadow-[0_30px_60px_-15px_rgba(79,101,241,0.6)] hover:-translate-y-2 transition-all active:scale-95"
+              className="group w-full sm:w-auto h-14 px-10 rounded-xl text-base font-semibold bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:scale-[0.98] border-0"
               onClick={() => scrollTo('#process')}
             >
-              Experience
-              <ArrowRight className="ml-4 w-7 h-7" />
+              Explore the Process
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="w-full sm:w-auto h-20 sm:h-24 px-12 sm:px-16 rounded-[2.5rem] text-xl sm:text-2xl font-black uppercase tracking-widest border-2 border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-900 text-slate-800 dark:text-slate-200 active:scale-95 transition-all shadow-2xl shadow-slate-900/10"
-              onClick={() => scrollTo('#benefits')}
+              className="w-full sm:w-auto h-14 px-10 rounded-xl text-base font-semibold border-2 border-indigo-200 hover:border-indigo-300 hover:bg-indigo-50/50 text-indigo-700 hover:text-indigo-800 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 active:scale-[0.98] backdrop-blur-sm bg-white/60"
+              onClick={() => scrollTo('#contact')}
             >
-              Details
+              Get in Touch
             </Button>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <Section className="bg-slate-50/30 overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
-          <div className="space-y-10">
+      <Section className="bg-gradient-to-br from-white via-indigo-50/20 to-blue-50/30 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-l from-indigo-200/15 to-blue-200/15 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+          <div className="space-y-8">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-6xl font-display font-black text-slate-950 tracking-tight leading-[0.9]">Transforming <br/>Assessment.</h2>
-              <p className="text-slate-600 dark:text-slate-400 text-xl leading-relaxed font-medium">
-                Our Digital Evaluation System replaces traditional manual checking with a secure, cloud-based platform. Answer sheets are scanned at high resolution, encrypted, and distributed digitally to evaluators.
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 leading-tight">Transforming Academic Assessment</h2>
+              <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
+                Our Digital Evaluation System replaces traditional manual checking with a <span className="text-indigo-600 font-semibold">secure</span>, <span className="text-blue-600 font-semibold">cloud-based platform</span>. Answer sheets are scanned at high resolution, encrypted, and distributed digitally to evaluators.
               </p>
-              <p className="text-slate-600 dark:text-slate-400 text-xl leading-relaxed font-medium">
-                This eliminates physical handling errors, prevents data loss, and ensures that every student's effort is graded with absolute precision and fairness.
+              <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
+                This eliminates physical handling errors, prevents data loss, and ensures that every student's effort is graded with <span className="text-cyan-600 font-semibold">absolute precision</span> and <span className="text-indigo-600 font-semibold">fairness</span>.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              <div className="group flex items-start gap-5 p-6 rounded-[2rem] glass-card hover-glow">
-                <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <ShieldCheck className="w-7 h-7" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="group flex items-start gap-4 p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-indigo-100 hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/40 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 text-white flex items-center justify-center shrink-0 shadow-md group-hover:shadow-lg transition-shadow">
+                  <ShieldCheck className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-black text-xl text-slate-950 dark:text-white tracking-tight">Vault-Grade</h4>
-                  <p className="text-sm font-semibold text-slate-500 mt-1 uppercase tracking-wider">Military Encryption</p>
+                  <h4 className="font-semibold text-base text-slate-900">Vault-Grade Security</h4>
+                  <p className="text-sm text-slate-600 mt-1">Military-level encryption</p>
                 </div>
               </div>
-              <div className="group flex items-start gap-5 p-6 rounded-[2rem] glass-card hover-glow">
-                <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500">
-                  <TrendingUp className="w-7 h-7" />
+              <div className="group flex items-start gap-4 p-8 rounded-2xl bg-white/80 backdrop-blur-sm border border-cyan-100 hover:border-cyan-200 hover:shadow-lg hover:shadow-cyan-100/40 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white flex items-center justify-center shrink-0 shadow-md group-hover:shadow-lg transition-shadow">
+                  <TrendingUp className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-black text-xl text-slate-950 dark:text-white tracking-tight">Live Intelligence</h4>
-                  <p className="text-sm font-semibold text-slate-500 mt-1 uppercase tracking-wider">Predictive Data</p>
+                  <h4 className="font-semibold text-base text-slate-900">Real-time Analytics</h4>
+                  <p className="text-sm text-slate-600 mt-1">Live performance tracking</p>
                 </div>
               </div>
             </div>
@@ -160,10 +167,10 @@ export default function Home() {
       </Section>
 
       {/* Workflow Section */}
-      <Section id="process" className="section-padding">
-        <div className="text-center mb-16 px-6">
-          <h2 className="text-4xl md:text-6xl font-display font-black mb-6">The Smart Workflow</h2>
-          <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">A multi-layered verification engine designed for absolute academic integrity.</p>
+      <Section id="process" className="section-padding bg-gradient-to-br from-slate-50 via-indigo-50/30 to-blue-50/30">
+        <div className="text-center mb-20 px-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-slate-900">The Smart Workflow</h2>
+          <p className="text-slate-600 text-lg md:text-xl max-w-3xl mx-auto">A multi-layered verification engine designed for <span className="text-indigo-600 font-semibold">absolute academic integrity</span>.</p>
         </div>
 
         <div className="mobile-card-grid">
@@ -172,95 +179,104 @@ export default function Home() {
               step: "01",
               title: "Digital Ingest",
               desc: "High-resolution secure scanning of answer booklets into encrypted cloud architecture.",
-              icon: Scan
+              icon: Scan,
+              gradient: "from-indigo-500 to-blue-600",
+              glowColor: "group-hover:shadow-indigo-200/50"
             },
             {
               step: "02",
               title: "Primary Assessment",
               desc: "First-line evaluation by subject experts focusing on core marking metrics.",
-              icon: FileCheck
+              icon: FileCheck,
+              gradient: "from-blue-500 to-cyan-600",
+              glowColor: "group-hover:shadow-blue-200/50"
             },
             {
               step: "03",
               title: "Quality Audit",
               desc: "Senior academic review to ensure consistency across the entire assessment batch.",
-              icon: UserCheck
+              icon: UserCheck,
+              gradient: "from-cyan-500 to-teal-600",
+              glowColor: "group-hover:shadow-cyan-200/50"
             },
             {
               step: "04",
               title: "Final Integrity",
               desc: "Executive authority validation for final result synchronization and publishing.",
-              icon: ShieldCheck
+              icon: ShieldCheck,
+              gradient: "from-indigo-600 to-purple-600",
+              glowColor: "group-hover:shadow-indigo-200/50"
             }
           ].map((item, i) => (
-            <div key={i} className="group relative glass-card p-8 sm:p-10 hover-glow rounded-[2.5rem] transition-all duration-500 overflow-hidden">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
-              <div className="text-7xl font-display font-black text-primary/5 group-hover:text-primary/10 transition-colors absolute top-4 right-6 leading-none">
+            <div key={i} className={`group relative glass-card p-10 rounded-2xl hover:shadow-xl ${item.glowColor} transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden hover:-translate-y-2`}>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-500/10 to-blue-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="text-7xl font-display font-black text-slate-100 dark:text-slate-800/50 absolute top-6 right-6 leading-none select-none">
                 {item.step}
               </div>
-              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
-                <item.icon className="w-7 h-7 sm:w-8 sm:h-8" />
+              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} text-white flex items-center justify-center mb-8 relative z-10 shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                <item.icon className="w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors tracking-tight">{item.title}</h3>
-              <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base leading-relaxed font-medium">{item.desc}</p>
+              <h3 className="text-xl font-semibold mb-4 text-slate-900 relative z-10">{item.title}</h3>
+              <p className="text-slate-600 text-base leading-relaxed relative z-10">{item.desc}</p>
             </div>
           ))}
         </div>
       </Section>
 
       {/* Benefits Section */}
-      <Section id="benefits" className="bg-slate-950 text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(79,101,241,0.1),_transparent)] pointer-events-none"></div>
+      <Section id="benefits" className="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(99,102,241,0.12),_transparent)] pointer-events-none"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_rgba(59,130,246,0.08),_transparent)] pointer-events-none"></div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
           <div>
-             <h2 className="text-4xl md:text-5xl mb-8 text-white font-display font-black leading-tight">Why Choose Digital <br/>Assessment?</h2>
-             <p className="text-slate-400 text-xl mb-12 leading-relaxed">
+             <h2 className="text-3xl md:text-4xl mb-6 text-white font-display font-bold leading-tight">Why Choose Digital Assessment?</h2>
+             <p className="text-slate-300 text-base md:text-lg mb-10 leading-relaxed">
                Moving beyond the constraints of paper-based systems to a secure, transparent, and future-ready academic environment.
              </p>
              
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { title: "Zero Data Loss", icon: Lock, color: "text-blue-400" },
-                  { title: "2x Faster Results", icon: Clock, color: "text-emerald-400" },
-                  { title: "Audit Trails", icon: FileCheck, color: "text-purple-400" },
-                  { title: "Bias Elimination", icon: UserCheck, color: "text-orange-400" },
+                  { title: "2x Faster Results", icon: Clock, color: "text-cyan-400" },
+                  { title: "Complete Audit Trails", icon: FileCheck, color: "text-indigo-400" },
+                  { title: "Bias Elimination", icon: UserCheck, color: "text-purple-400" },
                 ].map((b, i) => (
-                  <div key={i} className="flex items-center gap-5 bg-white/5 p-6 rounded-[1.5rem] border border-white/10 hover:bg-white/10 transition-all duration-300 group">
-                    <div className={cn("w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform", b.color)}>
-                      <b.icon className="w-6 h-6" />
+                  <div key={i} className="flex items-center gap-4 bg-white/5 backdrop-blur-sm p-5 rounded-xl border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <div className={cn("w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center", b.color)}>
+                      <b.icon className="w-5 h-5" />
                     </div>
-                    <span className="font-bold text-lg">{b.title}</span>
+                    <span className="font-semibold text-sm">{b.title}</span>
                   </div>
                 ))}
              </div>
           </div>
           
           <div className="grid grid-cols-2 gap-6">
-             <Card className="bg-white/5 border-white/10 text-slate-100 p-10 flex flex-col items-center text-center hover:bg-white/10 transition-all duration-500 rounded-[2.5rem] hover:-translate-y-2">
-                <TrendingUp className="w-14 h-14 text-emerald-400 mb-6" />
-                <div className="text-5xl font-display font-black text-white mb-2">95%</div>
-                <div className="text-sm font-bold uppercase tracking-widest text-slate-500">Error Reduction</div>
+             <Card ref={errorReduction.ref} className="bg-white/5 backdrop-blur-sm border border-white/10 text-slate-100 p-8 flex flex-col items-center text-center hover:bg-white/10 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 rounded-2xl group">
+                <TrendingUp className="w-12 h-12 text-cyan-400 mb-5 group-hover:scale-110 transition-transform" />
+                <div className="text-5xl font-display font-bold text-white mb-2">{errorReduction.count}%</div>
+                <div className="text-sm font-medium text-slate-300">Error Reduction</div>
              </Card>
-             <Card className="bg-white/5 border-white/10 text-slate-100 p-10 flex flex-col items-center text-center hover:bg-white/10 transition-all duration-500 rounded-[2.5rem] hover:-translate-y-2">
-                <Clock className="w-14 h-14 text-blue-400 mb-6" />
-                <div className="text-5xl font-display font-black text-white mb-2">50%</div>
-                <div className="text-sm font-bold uppercase tracking-widest text-slate-500">Time Saved</div>
+             <Card ref={timeSaved.ref} className="bg-white/5 backdrop-blur-sm border border-white/10 text-slate-100 p-8 flex flex-col items-center text-center hover:bg-white/10 hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 rounded-2xl group">
+                <Clock className="w-12 h-12 text-blue-400 mb-5 group-hover:scale-110 transition-transform" />
+                <div className="text-5xl font-display font-bold text-white mb-2">{timeSaved.count}%</div>
+                <div className="text-sm font-medium text-slate-300">Time Saved</div>
              </Card>
-             <Card className="bg-white/5 border-white/10 text-slate-100 p-10 flex flex-col items-center text-center col-span-2 hover:bg-white/10 transition-all duration-500 rounded-[2.5rem] hover:-translate-y-2">
-                <ShieldCheck className="w-14 h-14 text-purple-400 mb-6" />
-                <div className="text-5xl font-display font-black text-white mb-2">100%</div>
-                <div className="text-sm font-bold uppercase tracking-widest text-slate-500">Data Integrity</div>
+             <Card ref={dataIntegrity.ref} className="bg-white/5 backdrop-blur-sm border border-white/10 text-slate-100 p-8 flex flex-col items-center text-center col-span-2 hover:bg-white/10 hover:border-indigo-500/30 hover:shadow-lg hover:shadow-indigo-500/20 transition-all duration-300 rounded-2xl group">
+                <ShieldCheck className="w-12 h-12 text-indigo-400 mb-5 group-hover:scale-110 transition-transform" />
+                <div className="text-5xl font-display font-bold text-white mb-2">{dataIntegrity.count}%</div>
+                <div className="text-sm font-medium text-slate-300">Data Integrity</div>
              </Card>
           </div>
         </div>
       </Section>
 
       {/* FAQs Section */}
-      <Section id="faqs" className="bg-slate-50">
+      <Section id="faqs" className="bg-gradient-to-b from-white via-slate-50/50 to-white">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl mb-4">Common Questions</h2>
-            <p className="text-slate-600">Everything you need to know about the new system.</p>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-slate-900">Frequently Asked Questions</h2>
+            <p className="text-slate-600 text-lg">Everything you need to know about the new system.</p>
           </div>
 
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -282,11 +298,11 @@ export default function Home() {
                 a: "Yes, the re-evaluation process is streamlined. Since papers are digital, retrieving and re-assigning them for review is instant."
               }
             ].map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="bg-white border border-slate-200 rounded-lg px-6 shadow-sm">
-                <AccordionTrigger className="text-left font-semibold text-slate-800 hover:text-primary hover:no-underline py-6">
+              <AccordionItem key={i} value={`item-${i}`} className="bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl px-6 hover:border-indigo-300 hover:shadow-lg hover:shadow-indigo-100/40 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                <AccordionTrigger className="text-left font-semibold text-slate-900 hover:text-indigo-600 hover:no-underline py-5 transition-colors">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-600 pb-6 leading-relaxed">
+                <AccordionContent className="text-slate-600 text-base pb-5 leading-relaxed">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
@@ -296,47 +312,48 @@ export default function Home() {
       </Section>
 
       {/* Contact Section */}
-      <Section id="contact">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-2xl">
-          <div className="lg:col-span-2 bg-slate-900 text-white p-10 flex flex-col justify-between relative overflow-hidden">
-             <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <Section id="contact" className="bg-gradient-to-br from-slate-50 to-indigo-50/30">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-2xl">
+          <div className="lg:col-span-2 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-12 flex flex-col justify-between relative overflow-hidden">
+             <div className="absolute top-0 right-0 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
              
-             <div>
-               <h3 className="text-2xl font-display font-bold mb-4">Get in Touch</h3>
-               <p className="text-slate-400 mb-8">
+             <div className="relative z-10">
+               <h3 className="text-2xl font-display font-bold mb-3">Get in Touch</h3>
+               <p className="text-slate-300 text-base mb-10 leading-relaxed">
                  Have questions about the implementation or technical details? Our team is here to help.
                </p>
                
                <div className="space-y-6">
                  <div className="flex items-start gap-4">
-                   <div className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center shrink-0">
-                     <Scan className="w-4 h-4 text-primary" />
+                   <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0">
+                     <Scan className="w-5 h-5 text-indigo-400" />
                    </div>
                    <div>
-                     <h5 className="font-semibold text-white">Examination Cell</h5>
+                     <h5 className="font-semibold text-white mb-1">Examination Cell</h5>
                      <p className="text-sm text-slate-400">Building A, 2nd Floor</p>
                    </div>
                  </div>
                  <div className="flex items-start gap-4">
-                   <div className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center shrink-0">
-                     <Clock className="w-4 h-4 text-primary" />
+                   <div className="w-10 h-10 rounded-lg bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0">
+                     <Clock className="w-5 h-5 text-blue-400" />
                    </div>
                    <div>
-                     <h5 className="font-semibold text-white">Support Hours</h5>
+                     <h5 className="font-semibold text-white mb-1">Support Hours</h5>
                      <p className="text-sm text-slate-400">Mon-Sat: 9:00 AM - 5:00 PM</p>
                    </div>
                  </div>
                </div>
              </div>
              
-             <div className="pt-10">
-               <div className="text-xs font-mono text-slate-500 mb-2">TRUSTED BY</div>
+             <div className="pt-10 relative z-10">
+               <div className="text-xs font-mono text-slate-500 mb-2 uppercase tracking-wider">Trusted By</div>
                <div className="text-xl font-display font-bold">Darshan University</div>
              </div>
           </div>
           
-          <div className="lg:col-span-3 p-10">
-            <h3 className="text-2xl font-bold mb-6 text-slate-900">Send an Inquiry</h3>
+          <div className="lg:col-span-3 p-12">
+            <h3 className="text-2xl font-display font-bold mb-8 text-slate-900">Send an Inquiry</h3>
             <ContactForm />
           </div>
         </div>

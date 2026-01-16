@@ -41,30 +41,31 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center gap-4 cursor-pointer group" onClick={() => scrollToSection("#home")}>
-            <div className="w-14 h-14 rounded-[1.25rem] bg-primary flex items-center justify-center text-white shadow-2xl shadow-primary/40 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
-              <GraduationCap className="w-8 h-8" />
+          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollToSection("#home")}>
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-all duration-300">
+              <GraduationCap className="w-6 h-6" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-black text-3xl leading-tight text-slate-950 dark:text-white tracking-tighter">Darshan</span>
-              <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] ml-0.5">University</span>
+              <span className="font-display font-bold text-xl leading-tight text-slate-950 dark:text-white">Darshan</span>
+              <span className="text-[9px] font-semibold text-indigo-600 uppercase tracking-wider">University</span>
             </div>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-12">
+          <div className="hidden lg:flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-all hover:tracking-[0.2em]"
+                className="relative text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors group"
               >
                 {item.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-blue-600 group-hover:w-full transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"></span>
               </button>
             ))}
             <Button 
               onClick={() => scrollToSection("#contact")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-2xl shadow-primary/30 rounded-[1.25rem] px-10 py-8 h-auto font-black uppercase tracking-widest text-sm active:scale-95 transition-all hover:-translate-y-1"
+              className="bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white shadow-lg shadow-indigo-500/25 hover:shadow-xl hover:shadow-indigo-500/30 rounded-xl px-6 h-10 text-sm font-semibold active:scale-95 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
               Get in Touch
             </Button>
@@ -72,28 +73,28 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 text-slate-600"
+            className="lg:hidden p-2 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X /> : <Menu />}
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 shadow-xl p-5 flex flex-col gap-3 animate-in slide-in-from-top-5">
           {NAV_ITEMS.map((item) => (
             <button
               key={item.label}
               onClick={() => scrollToSection(item.href)}
-              className="text-left text-base font-medium text-slate-600 py-2 border-b border-slate-50 last:border-0"
+              className="text-left text-sm font-medium text-slate-700 dark:text-slate-300 py-2.5 border-b border-slate-100 dark:border-slate-800 last:border-0 hover:text-indigo-600 transition-colors"
             >
               {item.label}
             </button>
           ))}
-          <Button onClick={() => scrollToSection("#contact")} className="w-full mt-2">
-            Contact Us
+          <Button onClick={() => scrollToSection("#contact")} className="w-full mt-2 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 rounded-full">
+            Get in Touch
           </Button>
         </div>
       )}

@@ -1,41 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  /* High-Performance Academic Palette */
-  --background: 210 100% 99%;
-  --foreground: 224 71% 4%;
+  /* Premium Academic Palette */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
   
-  /* Primary: Deep Indigo with subtle saturation */
-  --primary: 234 89% 60%;
+  /* Primary: Refined Indigo - professional and trustworthy */
+  --primary: 234 72% 56%;
   --primary-foreground: 0 0% 100%;
   
-  /* Secondary: Softest Ice Blue */
-  --secondary: 210 100% 97%;
-  --secondary-foreground: 224 71% 10%;
+  /* Secondary: Soft Slate for subtle elements */
+  --secondary: 210 20% 96%;
+  --secondary-foreground: 222 47% 20%;
   
-  /* Muted: Professional Neutral */
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 44%;
+  /* Muted: Ultra-light neutrals */
+  --muted: 210 20% 97%;
+  --muted-foreground: 215 16% 47%;
   
-  /* Accent: Bright Cyan for interactive highlights */
-  --accent: 199 89% 48%;
+  /* Accent: Calm Cyan for highlights */
+  --accent: 199 72% 52%;
   --accent-foreground: 0 0% 100%;
   
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive: 0 72% 60%;
+  --destructive-foreground: 0 0% 100%;
   
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 234 89% 60%;
+  --border: 220 15% 90%;
+  --input: 220 15% 92%;
+  --ring: 234 72% 56%;
   
-  --radius: 1.5rem;
+  --radius: 1rem;
 
-  --font-body: 'Inter', sans-serif;
-  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Poppins', 'Inter', sans-serif;
 }
 
 .dark {
@@ -60,29 +60,55 @@
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
+  
   body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary;
+    @apply bg-background text-foreground antialiased selection:bg-indigo-100/80 selection:text-indigo-900;
     font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    @apply font-black tracking-tight text-slate-950 dark:text-slate-50;
+    @apply font-bold text-slate-900 dark:text-slate-50;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-5xl sm:text-6xl md:text-7xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  p {
+    line-height: 1.75;
   }
 }
 
 @layer utilities {
   .glass-card {
-    @apply bg-white/40 dark:bg-slate-950/40 backdrop-blur-3xl border border-white/50 dark:border-white/10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)];
+    @apply bg-white/60 dark:bg-slate-950/40 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-[0_20px_40px_-12px_rgba(0,0,0,0.08)];
   }
   
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-indigo-600 via-blue-600 to-cyan-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-blue-600 to-cyan-600;
   }
 
-  .hover-glow {
-    @apply transition-all duration-700 hover:shadow-[0_40px_80px_-20px_rgba(79,101,241,0.45)] hover:-translate-y-3;
+  .hover-lift {
+    @apply transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-xl hover:shadow-indigo-100/40 hover:-translate-y-1;
   }
 
   .mobile-card-grid {
@@ -90,16 +116,61 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-32 lg:py-40;
+    @apply py-20 md:py-28 lg:py-36;
+  }
+
+  .premium-input {
+    @apply h-12 rounded-xl border-2 border-slate-200 bg-white px-4 text-slate-900 transition-all duration-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 focus-visible:outline-none;
+  }
+
+  .premium-button {
+    @apply h-12 rounded-xl px-6 font-semibold transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-[0.98];
   }
 
   .floating {
-    animation: floating 6s ease-in-out infinite;
+    animation: floating 8s ease-in-out infinite;
   }
 
   @keyframes floating {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-    100% { transform: translateY(0px); }
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s infinite;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-50;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-indigo-400/60 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-indigo-500/80;
+  }
+
+  /* Focus visible for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-indigo-500;
   }
 }

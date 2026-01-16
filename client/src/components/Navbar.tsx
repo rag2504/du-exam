@@ -34,37 +34,37 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm border-slate-200 py-3" : "bg-transparent py-5"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent",
+        isScrolled ? "bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-2xl shadow-slate-900/5 border-slate-200/50 dark:border-slate-800/50 py-4" : "bg-transparent py-6"
       )}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection("#home")}>
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/20">
-              <GraduationCap className="w-6 h-6" />
+          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollToSection("#home")}>
+            <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30 group-hover:scale-110 transition-transform duration-500">
+              <GraduationCap className="w-7 h-7" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-lg leading-tight text-slate-900">Darshan</span>
-              <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">University</span>
+              <span className="font-display font-black text-2xl leading-tight text-slate-900 dark:text-white tracking-tight">Darshan</span>
+              <span className="text-xs font-black text-primary uppercase tracking-[0.2em]">University</span>
             </div>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                className="text-sm font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
               >
                 {item.label}
               </button>
             ))}
             <Button 
               onClick={() => scrollToSection("#contact")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/25 rounded-full px-6"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/25 rounded-2xl px-8 py-6 h-auto font-black uppercase tracking-widest active:scale-95 transition-all"
             >
               Contact Us
             </Button>

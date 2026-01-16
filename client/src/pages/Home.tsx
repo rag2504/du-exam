@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Section } from "@/components/Section";
 import { ContactForm } from "@/components/ContactForm";
+import { cn } from "@/lib/utils";
 import { 
   Scan, 
   CheckCircle2, 
@@ -42,28 +43,28 @@ export default function Home() {
             Next-Gen Exam Assessment
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-slate-900 mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-slate-900 dark:text-white mb-8 tracking-tight leading-[1.1]">
             Digital Answer Paper <br className="hidden md:block"/>
-            <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">Evaluation System</span>
+            <span className="text-gradient">Evaluation System</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Ensuring accuracy, transparency, and quality in examination assessment through secure, multi-level digital verification.
+          <p className="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
+            Precision engineering for modern education. Ensuring accuracy, transparency, and quality through secure digital assessment.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button 
               size="lg" 
-              className="h-14 px-8 rounded-full text-base bg-primary hover:bg-primary/90 shadow-xl shadow-primary/20 hover:-translate-y-0.5 transition-all"
+              className="h-16 px-10 rounded-2xl text-lg font-bold bg-primary hover:bg-primary/90 shadow-[0_10px_30px_-10px_rgba(79,101,241,0.5)] hover:-translate-y-1 transition-all active:scale-95"
               onClick={() => scrollTo('#process')}
             >
               How It Works
-              <ArrowRight className="ml-2 w-4 h-4" />
+              <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="h-14 px-8 rounded-full text-base border-slate-200 hover:bg-slate-50 text-slate-700"
+              className="h-16 px-10 rounded-2xl text-lg font-bold border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900/50 text-slate-700 dark:text-slate-300 active:scale-95 transition-all"
               onClick={() => scrollTo('#benefits')}
             >
               Explore Benefits
@@ -187,61 +188,63 @@ export default function Home() {
               icon:  ShieldCheck
             }
           ].map((item, i) => (
-            <div key={i} className="group relative bg-white rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all duration-300">
-              <div className="text-5xl font-display font-bold text-slate-100 group-hover:text-blue-50 transition-colors absolute top-4 right-4 -z-10">
+            <div key={i} className="group relative glass-card p-10 hover-glow rounded-[2rem] transition-all duration-500 overflow-hidden">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+              <div className="text-7xl font-display font-black text-primary/5 group-hover:text-primary/10 transition-colors absolute top-4 right-6 leading-none">
                 {item.step}
               </div>
-              <div className="w-12 h-12 rounded-xl bg-blue-50 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <item.icon className="w-6 h-6" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
+                <item.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
+              <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </Section>
 
       {/* Benefits Section */}
-      <Section id="benefits" className="bg-slate-900 text-white">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <Section id="benefits" className="bg-slate-950 text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,_rgba(79,101,241,0.1),_transparent)] pointer-events-none"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
           <div>
-             <h2 className="text-3xl md:text-4xl mb-6 text-white">Why Digital Evaluation?</h2>
-             <p className="text-slate-400 text-lg mb-8 leading-relaxed">
-               Moving beyond paper-based limitations to a system that is faster, fairer, and future-ready.
+             <h2 className="text-4xl md:text-5xl mb-8 text-white font-display font-black leading-tight">Why Choose Digital <br/>Assessment?</h2>
+             <p className="text-slate-400 text-xl mb-12 leading-relaxed">
+               Moving beyond the constraints of paper-based systems to a secure, transparent, and future-ready academic environment.
              </p>
              
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {[
-                  { title: "Zero Data Loss", icon: Lock },
-                  { title: "2x Faster Results", icon: Clock },
-                  { title: "Audit Trails", icon: FileCheck },
-                  { title: "Bias Elimination", icon: UserCheck },
+                  { title: "Zero Data Loss", icon: Lock, color: "text-blue-400" },
+                  { title: "2x Faster Results", icon: Clock, color: "text-emerald-400" },
+                  { title: "Audit Trails", icon: FileCheck, color: "text-purple-400" },
+                  { title: "Bias Elimination", icon: UserCheck, color: "text-orange-400" },
                 ].map((b, i) => (
-                  <div key={i} className="flex items-center gap-4 bg-slate-800/50 p-4 rounded-xl border border-slate-800">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center">
-                      <b.icon className="w-5 h-5" />
+                  <div key={i} className="flex items-center gap-5 bg-white/5 p-6 rounded-[1.5rem] border border-white/10 hover:bg-white/10 transition-all duration-300 group">
+                    <div className={cn("w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform", b.color)}>
+                      <b.icon className="w-6 h-6" />
                     </div>
-                    <span className="font-semibold">{b.title}</span>
+                    <span className="font-bold text-lg">{b.title}</span>
                   </div>
                 ))}
              </div>
           </div>
           
-          <div className="grid grid-cols-2 gap-4">
-             <Card className="bg-slate-800 border-slate-700 text-slate-100 p-6 flex flex-col items-center text-center hover:bg-slate-800/80 transition-colors">
-                <TrendingUp className="w-10 h-10 text-green-400 mb-4" />
-                <div className="text-3xl font-display font-bold text-white mb-1">95%</div>
-                <div className="text-sm text-slate-400">Error Reduction</div>
+          <div className="grid grid-cols-2 gap-6">
+             <Card className="bg-white/5 border-white/10 text-slate-100 p-10 flex flex-col items-center text-center hover:bg-white/10 transition-all duration-500 rounded-[2.5rem] hover:-translate-y-2">
+                <TrendingUp className="w-14 h-14 text-emerald-400 mb-6" />
+                <div className="text-5xl font-display font-black text-white mb-2">95%</div>
+                <div className="text-sm font-bold uppercase tracking-widest text-slate-500">Error Reduction</div>
              </Card>
-             <Card className="bg-slate-800 border-slate-700 text-slate-100 p-6 flex flex-col items-center text-center hover:bg-slate-800/80 transition-colors">
-                <Clock className="w-10 h-10 text-blue-400 mb-4" />
-                <div className="text-3xl font-display font-bold text-white mb-1">50%</div>
-                <div className="text-sm text-slate-400">Time Saved</div>
+             <Card className="bg-white/5 border-white/10 text-slate-100 p-10 flex flex-col items-center text-center hover:bg-white/10 transition-all duration-500 rounded-[2.5rem] hover:-translate-y-2">
+                <Clock className="w-14 h-14 text-blue-400 mb-6" />
+                <div className="text-5xl font-display font-black text-white mb-2">50%</div>
+                <div className="text-sm font-bold uppercase tracking-widest text-slate-500">Time Saved</div>
              </Card>
-             <Card className="bg-slate-800 border-slate-700 text-slate-100 p-6 flex flex-col items-center text-center col-span-2 hover:bg-slate-800/80 transition-colors">
-                <ShieldCheck className="w-10 h-10 text-purple-400 mb-4" />
-                <div className="text-3xl font-display font-bold text-white mb-1">100%</div>
-                <div className="text-sm text-slate-400">Data Integrity</div>
+             <Card className="bg-white/5 border-white/10 text-slate-100 p-10 flex flex-col items-center text-center col-span-2 hover:bg-white/10 transition-all duration-500 rounded-[2.5rem] hover:-translate-y-2">
+                <ShieldCheck className="w-14 h-14 text-purple-400 mb-6" />
+                <div className="text-5xl font-display font-black text-white mb-2">100%</div>
+                <div className="text-sm font-bold uppercase tracking-widest text-slate-500">Data Integrity</div>
              </Card>
           </div>
         </div>

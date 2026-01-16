@@ -29,45 +29,47 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Abstract Background */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100 via-white to-white opacity-70"></div>
-        <div className="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3"></div>
+      <section id="home" className="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 -z-10 bg-slate-50 dark:bg-slate-950">
+          <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-500/10 dark:bg-blue-500/5 rounded-full blur-[120px] animate-pulse delay-700"></div>
+        </div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-sm font-medium mb-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-500/10 border border-indigo-100 dark:border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-xs sm:text-sm font-black uppercase tracking-widest mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-500 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
             </span>
-            Next-Gen Exam Assessment
+            Institutional Excellence
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-slate-900 dark:text-white mb-8 tracking-tight leading-[1.1]">
-            Digital Answer Paper <br className="hidden md:block"/>
-            <span className="text-gradient">Evaluation System</span>
+          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-black text-slate-900 dark:text-white mb-8 tracking-tighter leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            Digital Assessment <br className="hidden sm:block"/>
+            <span className="text-gradient">Redefined.</span>
           </h1>
           
-          <p className="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-            Precision engineering for modern education. Ensuring accuracy, transparency, and quality through secure digital assessment.
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
+            Empowering Darshan University with the world's most advanced digital evaluation ecosystem. Secure. Transparent. Accurate.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
             <Button 
               size="lg" 
-              className="h-16 px-10 rounded-2xl text-lg font-bold bg-primary hover:bg-primary/90 shadow-[0_10px_30px_-10px_rgba(79,101,241,0.5)] hover:-translate-y-1 transition-all active:scale-95"
+              className="w-full sm:w-auto h-16 sm:h-20 px-10 sm:px-12 rounded-[2rem] text-lg sm:text-xl font-black uppercase tracking-widest bg-primary hover:bg-primary/90 shadow-[0_20px_40px_-15px_rgba(79,101,241,0.5)] hover:-translate-y-1 transition-all active:scale-95"
               onClick={() => scrollTo('#process')}
             >
-              How It Works
-              <ArrowRight className="ml-2 w-5 h-5" />
+              Start Tour
+              <ArrowRight className="ml-3 w-6 h-6" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="h-16 px-10 rounded-2xl text-lg font-bold border-2 border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900/50 text-slate-700 dark:text-slate-300 active:scale-95 transition-all"
+              className="w-full sm:w-auto h-16 sm:h-20 px-10 sm:px-12 rounded-[2rem] text-lg sm:text-xl font-black uppercase tracking-widest border-2 border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-900 text-slate-700 dark:text-slate-300 active:scale-95 transition-all shadow-xl shadow-slate-900/5"
               onClick={() => scrollTo('#benefits')}
             >
-              Explore Benefits
+              Process Details
             </Button>
           </div>
         </div>
@@ -155,49 +157,49 @@ export default function Home() {
       </Section>
 
       {/* Workflow Section */}
-      <Section id="process">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl mb-4">The Evaluation Process</h2>
-          <p className="text-slate-600">A rigorous four-step workflow ensures every mark is justified.</p>
+      <Section id="process" className="section-padding">
+        <div className="text-center mb-16 px-6">
+          <h2 className="text-4xl md:text-6xl font-display font-black mb-6">The Smart Workflow</h2>
+          <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto">A multi-layered verification engine designed for absolute academic integrity.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mobile-card-grid">
           {[
             {
               step: "01",
-              title: "Digital Scanning",
-              desc: "Secure high-speed scanning of answer booklets into encrypted digital format.",
+              title: "Digital Ingest",
+              desc: "High-resolution secure scanning of answer booklets into encrypted cloud architecture.",
               icon: Scan
             },
             {
               step: "02",
-              title: "Level 1 Review",
-              desc: "Junior Supervisors check for completeness and assess basic correctness.",
+              title: "Primary Assessment",
+              desc: "First-line evaluation by subject experts focusing on core marking metrics.",
               icon: FileCheck
             },
             {
               step: "03",
-              title: "Level 2 Audit",
-              desc: "Senior Supervisors conduct quality reviews and cross-verify marking standards.",
+              title: "Quality Audit",
+              desc: "Senior academic review to ensure consistency across the entire assessment batch.",
               icon: UserCheck
             },
             {
               step: "04",
-              title: "Final Verification",
-              desc: "University Authority provides final validation before result publication.",
-              icon:  ShieldCheck
+              title: "Final Integrity",
+              desc: "Executive authority validation for final result synchronization and publishing.",
+              icon: ShieldCheck
             }
           ].map((item, i) => (
-            <div key={i} className="group relative glass-card p-10 hover-glow rounded-[2rem] transition-all duration-500 overflow-hidden">
+            <div key={i} className="group relative glass-card p-8 sm:p-10 hover-glow rounded-[2.5rem] transition-all duration-500 overflow-hidden">
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
               <div className="text-7xl font-display font-black text-primary/5 group-hover:text-primary/10 transition-colors absolute top-4 right-6 leading-none">
                 {item.step}
               </div>
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-lg shadow-primary/5">
-                <item.icon className="w-8 h-8" />
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-xl shadow-primary/5">
+                <item.icon className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
-              <p className="text-slate-500 dark:text-slate-400 text-base leading-relaxed">{item.desc}</p>
+              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors tracking-tight">{item.title}</h3>
+              <p className="text-slate-500 dark:text-slate-400 text-sm sm:text-base leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>

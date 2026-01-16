@@ -45,65 +45,68 @@ export default function Home() {
             Institutional Excellence
           </div>
           
-          <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-black text-slate-900 dark:text-white mb-8 tracking-tighter leading-[0.9] animate-in fade-in slide-in-from-bottom-8 duration-1000">
-            Digital Assessment <br className="hidden sm:block"/>
-            <span className="text-gradient">Redefined.</span>
+          <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black text-slate-950 dark:text-white mb-8 tracking-[ -0.05em] leading-[0.85] animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            Assessment <br className="hidden sm:block"/>
+            <span className="text-gradient">Engineered.</span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
-            Empowering Darshan University with the world's most advanced digital evaluation ecosystem. Secure. Transparent. Accurate.
+          <p className="text-xl sm:text-2xl md:text-3xl text-slate-600 dark:text-slate-400 max-w-4xl mx-auto mb-16 leading-relaxed font-semibold animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-200">
+            The future of academic evaluation. Secure, multi-layered, and built for Darshan University's vision of excellence.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 animate-in fade-in slide-in-from-bottom-16 duration-1000 delay-300">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto h-16 sm:h-20 px-10 sm:px-12 rounded-[2rem] text-lg sm:text-xl font-black uppercase tracking-widest bg-primary hover:bg-primary/90 shadow-[0_20px_40px_-15px_rgba(79,101,241,0.5)] hover:-translate-y-1 transition-all active:scale-95"
+              className="w-full sm:w-auto h-20 sm:h-24 px-12 sm:px-16 rounded-[2.5rem] text-xl sm:text-2xl font-black uppercase tracking-widest bg-primary hover:bg-primary/90 shadow-[0_30px_60px_-15px_rgba(79,101,241,0.6)] hover:-translate-y-2 transition-all active:scale-95"
               onClick={() => scrollTo('#process')}
             >
-              Start Tour
-              <ArrowRight className="ml-3 w-6 h-6" />
+              Experience
+              <ArrowRight className="ml-4 w-7 h-7" />
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="w-full sm:w-auto h-16 sm:h-20 px-10 sm:px-12 rounded-[2rem] text-lg sm:text-xl font-black uppercase tracking-widest border-2 border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-900 text-slate-700 dark:text-slate-300 active:scale-95 transition-all shadow-xl shadow-slate-900/5"
+              className="w-full sm:w-auto h-20 sm:h-24 px-12 sm:px-16 rounded-[2.5rem] text-xl sm:text-2xl font-black uppercase tracking-widest border-2 border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-900 text-slate-800 dark:text-slate-200 active:scale-95 transition-all shadow-2xl shadow-slate-900/10"
               onClick={() => scrollTo('#benefits')}
             >
-              Process Details
+              Details
             </Button>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <Section className="bg-slate-50/50">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl mb-6 text-slate-900">Revolutionizing Academic Assessment</h2>
-            <p className="text-slate-600 leading-relaxed mb-6">
-              Our Digital Evaluation System replaces traditional manual checking with a secure, cloud-based platform. Answer sheets are scanned at high resolution, encrypted, and distributed digitally to evaluators.
-            </p>
-            <p className="text-slate-600 leading-relaxed">
-              This eliminates physical handling errors, prevents data loss, and ensures that every student's effort is graded with absolute precision and fairness.
-            </p>
+      <Section className="bg-slate-50/30 overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-500/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
+          <div className="space-y-10">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-6xl font-display font-black text-slate-950 tracking-tight leading-[0.9]">Transforming <br/>Assessment.</h2>
+              <p className="text-slate-600 dark:text-slate-400 text-xl leading-relaxed font-medium">
+                Our Digital Evaluation System replaces traditional manual checking with a secure, cloud-based platform. Answer sheets are scanned at high resolution, encrypted, and distributed digitally to evaluators.
+              </p>
+              <p className="text-slate-600 dark:text-slate-400 text-xl leading-relaxed font-medium">
+                This eliminates physical handling errors, prevents data loss, and ensures that every student's effort is graded with absolute precision and fairness.
+              </p>
+            </div>
             
-            <div className="mt-8 grid grid-cols-2 gap-6">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-lg bg-blue-100 text-primary flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div className="group flex items-start gap-5 p-6 rounded-[2rem] glass-card hover-glow">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                  <ShieldCheck className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Secure Storage</h4>
-                  <p className="text-sm text-slate-500 mt-1">Encrypted database</p>
+                  <h4 className="font-black text-xl text-slate-950 dark:text-white tracking-tight">Vault-Grade</h4>
+                  <p className="text-sm font-semibold text-slate-500 mt-1 uppercase tracking-wider">Military Encryption</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-lg bg-blue-100 text-primary flex items-center justify-center shrink-0">
-                  <TrendingUp className="w-5 h-5" />
+              <div className="group flex items-start gap-5 p-6 rounded-[2rem] glass-card hover-glow">
+                <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-500">
+                  <TrendingUp className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900">Analytics</h4>
-                  <p className="text-sm text-slate-500 mt-1">Real-time insights</p>
+                  <h4 className="font-black text-xl text-slate-950 dark:text-white tracking-tight">Live Intelligence</h4>
+                  <p className="text-sm font-semibold text-slate-500 mt-1 uppercase tracking-wider">Predictive Data</p>
                 </div>
               </div>
             </div>

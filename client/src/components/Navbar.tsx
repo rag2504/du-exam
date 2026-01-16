@@ -41,32 +41,32 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => scrollToSection("#home")}>
-            <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-white shadow-xl shadow-primary/30 group-hover:scale-110 transition-transform duration-500">
-              <GraduationCap className="w-7 h-7" />
+          <div className="flex items-center gap-4 cursor-pointer group" onClick={() => scrollToSection("#home")}>
+            <div className="w-14 h-14 rounded-[1.25rem] bg-primary flex items-center justify-center text-white shadow-2xl shadow-primary/40 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+              <GraduationCap className="w-8 h-8" />
             </div>
             <div className="flex flex-col">
-              <span className="font-display font-black text-2xl leading-tight text-slate-900 dark:text-white tracking-tight">Darshan</span>
-              <span className="text-xs font-black text-primary uppercase tracking-[0.2em]">University</span>
+              <span className="font-display font-black text-3xl leading-tight text-slate-950 dark:text-white tracking-tighter">Darshan</span>
+              <span className="text-[10px] font-black text-primary uppercase tracking-[0.4em] ml-0.5">University</span>
             </div>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-12">
             {NAV_ITEMS.map((item) => (
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-black uppercase tracking-widest text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors"
+                className="text-xs font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-all hover:tracking-[0.2em]"
               >
                 {item.label}
               </button>
             ))}
             <Button 
               onClick={() => scrollToSection("#contact")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl shadow-primary/25 rounded-2xl px-8 py-6 h-auto font-black uppercase tracking-widest active:scale-95 transition-all"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-2xl shadow-primary/30 rounded-[1.25rem] px-10 py-8 h-auto font-black uppercase tracking-widest text-sm active:scale-95 transition-all hover:-translate-y-1"
             >
-              Contact Us
+              Get in Touch
             </Button>
           </div>
 

@@ -1,4 +1,4 @@
-import { GraduationCap, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -9,8 +9,12 @@ export function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-1 space-y-5">
             <div className="flex items-center gap-3 text-white">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center shadow-lg">
-                <GraduationCap className="w-6 h-6" />
+              <div className="w-11 h-11 rounded-xl overflow-hidden shadow-lg">
+                <img 
+                  src="https://i.postimg.cc/hGH0Thht/unnamed.png" 
+                  alt="Darshan University Logo" 
+                  className="w-full h-full object-contain bg-white"
+                />
               </div>
               <span className="font-display font-bold text-lg">Darshan University</span>
             </div>
